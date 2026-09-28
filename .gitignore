@@ -1,0 +1,29 @@
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+
+# Build files
+build/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Windows / OS
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+
+# Secrets
+.env
+.env.*
+secrets.*
