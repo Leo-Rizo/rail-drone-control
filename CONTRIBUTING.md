@@ -17,7 +17,7 @@ git checkout main
 git pull
 ```
 
-DespuÈs se debe crear una rama nueva:
+Despu√©s se debe crear una rama nueva:
 
 ```bash
 git checkout -b tipo/nombre-de-la-tarea
@@ -27,9 +27,9 @@ git checkout -b tipo/nombre-de-la-tarea
 
 - `feature/` para nuevas funcionalidades
 - `fix/` para correcciones
-- `docs/` para documentaciÛn
+- `docs/` para documentaci√≥n
 - `test/` para pruebas
-- `refactor/` para reorganizaciÛn de cÛdigo sin cambiar funcionalidad
+- `refactor/` para reorganizaci√≥n de c√≥digo sin cambiar funcionalidad
 
 ### Ejemplos
 
@@ -45,12 +45,12 @@ docs/control-architecture
 
 ## Commits
 
-Los commits deben ser pequeÒos y describir claramente el cambio realizado.
+Los commits deben ser peque√±os y describir claramente el cambio realizado.
 
 Formato recomendado:
 
 ```text
-tipo: descripciÛn breve
+tipo: descripci√≥n breve
 ```
 
 ### Ejemplos
@@ -66,10 +66,10 @@ refactor: separate motor mixer module
 Tipos recomendados:
 
 - `feat` nueva funcionalidad
-- `fix` correcciÛn de error
-- `docs` documentaciÛn
+- `fix` correcci√≥n de error
+- `docs` documentaci√≥n
 - `test` pruebas
-- `refactor` reorganizaciÛn de cÛdigo
+- `refactor` reorganizaci√≥n de c√≥digo
 - `chore` mantenimiento del proyecto
 
 ## Antes de hacer un commit
@@ -89,7 +89,7 @@ git add .
 Crear el commit:
 
 ```bash
-git commit -m "tipo: descripciÛn"
+git commit -m "tipo: descripci√≥n"
 ```
 
 Subir la rama:
@@ -104,12 +104,12 @@ Todo cambio hacia `main` debe realizarse mediante Pull Request.
 
 Antes de solicitar el merge se debe comprobar:
 
-- El cÛdigo compila.
+- El c√≥digo compila.
 - No se incluyen archivos generados.
-- No se incluyen contraseÒas, tokens o secretos.
+- No se incluyen contrase√±as, tokens o secretos.
 - La funcionalidad fue probada cuando sea posible.
-- La documentaciÛn fue actualizada si el cambio lo requiere.
-- El Pull Request describe claramente quÈ se modificÛ.
+- La documentaci√≥n fue actualizada si el cambio lo requiere.
+- El Pull Request describe claramente qu√© se modific√≥.
 
 ## Firmware
 
@@ -128,19 +128,19 @@ cd firmware
 pio run
 ```
 
-TambiÈn se puede utilizar el botÛn Build de PlatformIO en VS Code.
+Tambi√©n se puede utilizar el bot√≥n Build de PlatformIO en VS Code.
 
 El firmware debe compilar correctamente antes de integrarse a `main`.
 
 ## Estructura del proyecto
 
 ```text
-firmware/       CÛdigo del ESP32
-interface/      Dashboard y supervisiÛn
-simulation/     Modelado y simulaciÛn
-electronics/    ElectrÛnica y alimentaciÛn
-mechanical/     DiseÒo mec·nico
-docs/           DocumentaciÛn tÈcnica
+firmware/       C√≥digo del ESP32
+interface/      Dashboard y supervisi√≥n
+simulation/     Modelado y simulaci√≥n
+electronics/    Electr√≥nica y alimentaci√≥n
+mechanical/     Dise√±o mec√°nico
+docs/           Documentaci√≥n t√©cnica
 ```
 
 ## Archivos que no deben subirse
@@ -149,21 +149,21 @@ No se deben agregar al repositorio:
 
 - Archivos compilados de PlatformIO
 - Carpetas `.pio/`
-- ContraseÒas
+- Contrase√±as
 - Tokens
 - Archivos `.env`
 - Archivos temporales
-- Archivos generados autom·ticamente por el IDE
+- Archivos generados autom√°ticamente por el IDE
 
-## IntegraciÛn
+## Integraci√≥n
 
 Una vez aprobado el Pull Request, los cambios se integran a `main`.
 
-DespuÈs del merge, cada integrante debe actualizar su copia local:
+Despu√©s del merge, cada integrante debe actualizar su copia local:
 
 ```bash
 git checkout main
 git pull
 ```
 
-La siguiente tarea debe comenzar desde una rama nueva creada a partir de la versiÛn actualizada de `main`.
+La siguiente tarea debe comenzar desde una rama nueva creada a partir de la versi√≥n actualizada de `main`.

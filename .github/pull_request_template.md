@@ -1,43 +1,43 @@
 # Pull Request
 
-## DescripciÛn
+## Descripci√≥n
 
-Describe brevemente quÈ cambia este Pull Request.
+Describe brevemente qu√© cambia este Pull Request.
 
 ## Tipo de cambio
 
 - [ ] Nueva funcionalidad
-- [ ] CorrecciÛn de error
-- [ ] DocumentaciÛn
+- [ ] Correcci√≥n de error
+- [ ] Documentaci√≥n
 - [ ] Pruebas
-- [ ] RefactorizaciÛn
+- [ ] Refactorizaci√≥n
 - [ ] Otro
 
-## ¡rea afectada
+## √Årea afectada
 
 - [ ] Firmware
 - [ ] Control
 - [ ] Sensores
 - [ ] Actuadores
 - [ ] Interfaz
-- [ ] ElectrÛnica
-- [ ] Mec·nica
-- [ ] SimulaciÛn
-- [ ] DocumentaciÛn
+- [ ] Electr√≥nica
+- [ ] Mec√°nica
+- [ ] Simulaci√≥n
+- [ ] Documentaci√≥n
 
 ## Pruebas realizadas
 
-Describe cÛmo verificaste los cambios.
+Describe c√≥mo verificaste los cambios.
 
 ## Checklist
 
-- [ ] El cÛdigo compila correctamente.
-- [ ] ProbÈ la funcionalidad modificada.
-- [ ] No incluÌ archivos generados innecesarios.
-- [ ] No incluÌ contraseÒas, tokens ni secretos.
-- [ ] ActualicÈ la documentaciÛn si era necesario.
-- [ ] RevisÈ los cambios antes de solicitar el merge.
+- [ ] El c√≥digo compila correctamente.
+- [ ] Prob√© la funcionalidad modificada.
+- [ ] No inclu√≠ archivos generados innecesarios.
+- [ ] No inclu√≠ contrase√±as, tokens ni secretos.
+- [ ] Actualic√© la documentaci√≥n si era necesario.
+- [ ] Revis√© los cambios antes de solicitar el merge.
 
 ## Notas adicionales
 
-Agrega aquÌ cualquier informaciÛn relevante para la revisiÛn.
+Agrega aqu√≠ cualquier informaci√≥n relevante para la revisi√≥n.

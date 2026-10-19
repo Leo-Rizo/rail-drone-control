@@ -1,2 +1,2 @@
 # Protocols
-Protocolos de comunicación y telemetría.
+Protocolos de comunicaciÃ³n y telemetrÃ­a.

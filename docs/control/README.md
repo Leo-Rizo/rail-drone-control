@@ -1,2 +1,2 @@
 # Control
-Modelado y diseño de los controladores.
+Modelado y diseÃ±o de los controladores.
