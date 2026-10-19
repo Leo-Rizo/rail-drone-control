@@ -1,8 +1,9 @@
+# Configures GitHub labels, milestones, and issues; does not create a GitHub Projects board.
 $ErrorActionPreference = "Stop"
 
 Write-Host ""
 Write-Host "======================================"
-Write-Host " RailDrone GitHub Project Setup"
+Write-Host " GitHub: Labels, Milestones, Issues"
 Write-Host "======================================"
 Write-Host ""
 
@@ -650,7 +651,7 @@ foreach ($issue in $issues) {
 
 Write-Host ""
 Write-Host "======================================"
-Write-Host " GitHub setup completed successfully"
+Write-Host " GitHub issue setup completed"
 Write-Host "======================================"
 Write-Host ""
 Write-Host "Repository:"

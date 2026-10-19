@@ -1,14 +1,14 @@
 # RailDrone Control System
 
-Sistema mecatrÛnico desarrollado para la materia de Control y DiseÒo de Interfaces AnalÛgicas y Digitales.
+Sistema mecatr√≥nico desarrollado para la materia de Control y Dise√±o de Interfaces Anal√≥gicas y Digitales.
 
 ## Objetivo
 
-DiseÒar e implementar una plataforma aÈrea acoplada a un carro guiado por riel capaz de controlar su posiciÛn vertical y orientaciÛn angular mediante motores BLDC, sensores inerciales y sensores de distancia.
+Dise√±ar e implementar una plataforma a√©rea acoplada a un carro guiado por riel capaz de controlar su posici√≥n vertical y orientaci√≥n angular mediante motores BLDC, sensores inerciales y sensores de distancia.
 
 ## Arquitectura inicial
 
-El sistema utilizar· un ESP32 como controlador principal.
+El sistema utilizar√° un ESP32 como controlador principal.
 
 Principales subsistemas:
 
@@ -18,28 +18,30 @@ Principales subsistemas:
 - Limit switches
 - Motores BLDC
 - ESC
-- HÈlices
+- H√©lices
 - Gamepad PlayStation
-- Sistema de alimentaciÛn
+- Sistema de alimentaci√≥n
 - Control de altura
 - Control angular
 - Motor mixer
-- TelemetrÌa
-- Interfaz gr·fica
+- Telemetr√≠a
+- Interfaz gr√°fica
 
 ## Estructura del repositorio
 
 ```text
 firmware/       Firmware del ESP32
-interface/      Dashboard y supervisiÛn
-simulation/     Modelado y simulaciÛn
-electronics/    ElectrÛnica y alimentaciÛn
-mechanical/     DiseÒo mec·nico
-docs/           DocumentaciÛn tÈcnica
+interface/      Dashboard y supervisi√≥n
+simulation/     Modelado y simulaci√≥n
+electronics/    Electr√≥nica y alimentaci√≥n
+mechanical/     Dise√±o mec√°nico
+docs/           Documentaci√≥n t√©cnica
+```
+
 ## Estado
 
-Proyecto en fase inicial de arquitectura y diseÒo.
+Proyecto en fase inicial de arquitectura y dise√±o.
 
 ## Equipo
 
-Proyecto acadÈmico desarrollado para la materia de Control y DiseÒo de Interfaces AnalÛgicas y Digitales.
+Proyecto acad√©mico desarrollado para la materia de Control y Dise√±o de Interfaces Anal√≥gicas y Digitales.

@@ -1,2 +1,2 @@
 # Firmware
-Código embebido del ESP32 desarrollado con PlatformIO.
+CÃ³digo embebido del ESP32 desarrollado con PlatformIO.
