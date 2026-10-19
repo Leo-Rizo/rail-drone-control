@@ -39,6 +39,8 @@ Rates are preliminary design targets or expected ranges, not implemented schedul
 
 The proposed pins avoid the commonly used classic ESP32 strapping pins GPIO0, GPIO2, GPIO5, GPIO12, and GPIO15 for these example assignments. This is not a guarantee for every ESP32 variant or DevKit. GPIO6–GPIO11 are commonly connected to module flash and are not proposed. Recheck all assignments against the exact board documentation before freezing the map.
 
+On the classic ESP32, GPIO34–GPIO39 are input-only and do not provide internal pull-up or pull-down resistors. Any switch or other digital input assigned to these pins requires appropriate external biasing. The current provisional upper and lower limit-switch assignments are GPIO32 and GPIO33, so this limitation does not affect those assignments. Consider it again if the pin map is revised.
+
 ## Shared bus and electrical interface notes
 
 - BNO085 and ToF are provisionally on the same I2C bus. Confirm unique addresses; if they conflict, select a supported address option or a bus mux after the ToF model is known.

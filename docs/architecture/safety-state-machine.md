@@ -41,6 +41,10 @@ stateDiagram-v2
 
 Any state may transition to `EMERGENCY_STOP` when the emergency condition is detected. A reset is accepted only after the emergency input is released, the cause has been inspected, and an explicit reset is made. Emergency stop is latched; it does not transition directly to `ARMED` or `RUNNING`.
 
+## Limit-switch command authority
+
+Limit-switch handling runs locally on the ESP32 and does not depend on the dashboard. An active upper travel limit overrides normal upward motion commands, and an active lower travel limit overrides normal downward motion commands. A limit switch prevents commanding motion farther into its active boundary. This authority is higher than normal operator commands, references, control outputs, and motor-mixer requests. Motion away from an active boundary may be permitted only when consistent with the current safety state and future implementation rules. The exact electrical implementation and final recovery behavior remain TBD.
+
 ## Fault and emergency conditions
 
 Conditions that should force `FAULT` include, at minimum:
