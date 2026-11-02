@@ -36,11 +36,12 @@ bool StateMachine::transition_to(SystemMode next) noexcept {
         return false;
     }
     mode_ = next;
+    ++transition_generation_;
     return true;
 }
 
 bool StateMachine::begin_self_test() noexcept {
-    return transition_to(SystemMode::SELF_TEST);
+    return mode_ == SystemMode::BOOT && transition_to(SystemMode::SELF_TEST);
 }
 
 bool StateMachine::complete_self_test(bool checks_passed) noexcept {

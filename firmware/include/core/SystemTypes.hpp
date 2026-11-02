@@ -15,6 +15,7 @@ enum class SystemMode : std::uint8_t {
 };
 
 enum class ControlMode : std::uint8_t {
+    NONE,
     MANUAL,
     ASSISTED,
     AUTOMATIC,
@@ -23,10 +24,13 @@ enum class ControlMode : std::uint8_t {
 enum class FaultCode : std::uint16_t {
     NONE,
     SELF_TEST_FAILED,
+    SAFETY_POLICY_UNCONFIGURED,
+    INVALID_CONTROL_COMMAND,
     IMU_UNAVAILABLE,
     TOF_UNAVAILABLE,
     LIMIT_SWITCHES_UNAVAILABLE,
     GAMEPAD_LOST,
+    GAMEPAD_STALE,
     UPPER_LIMIT,
     LOWER_LIMIT,
     INVALID_STATE,
@@ -55,6 +59,7 @@ struct SystemState {
     bool lower_limit{false};
     bool lower_limit_valid{false};
     bool gamepad_connected{false};
+    bool gamepad_fresh{false};
 };
 
 // Manual axes are normalized to [-1, 1]. Positive vertical_command requests
@@ -70,7 +75,7 @@ struct OperatorCommand {
     bool angle_reference_valid{false};
     float vertical_command{0.0F};
     float angular_command{0.0F};
-    ControlMode requested_control_mode{ControlMode::MANUAL};
+    ControlMode requested_control_mode{ControlMode::NONE};
 };
 
 // Controller intent before motor allocation. Positive altitude_effort is an
@@ -96,7 +101,7 @@ struct MotorCommands {
 struct TelemetryRecord {
     std::uint32_t timestamp_ms{0};
     SystemMode system_state{SystemMode::BOOT};
-    ControlMode control_mode{ControlMode::MANUAL};
+    ControlMode control_mode{ControlMode::NONE};
     float altitude_m{0.0F};
     bool altitude_valid{false};
     float altitude_reference_m{0.0F};
@@ -118,6 +123,7 @@ struct TelemetryRecord {
     bool lower_limit{false};
     bool lower_limit_valid{false};
     bool gamepad_connected{false};
+    bool gamepad_fresh{false};
     FaultCode fault_code{FaultCode::NONE};
 };
 

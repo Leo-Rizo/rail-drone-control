@@ -1,15 +1,14 @@
 #include <Arduino.h>
 
 #include "config/FirmwareConfig.hpp"
-#include "core/StateMachine.hpp"
+#include "control/MotorMixer.hpp"
+#include "core/ApplicationCoordinator.hpp"
 #include "core/SystemTypes.hpp"
-#include "safety/SafetyManager.hpp"
-#include "telemetry/TelemetryBuilder.hpp"
 
 namespace {
 
-raildrone::StateMachine state_machine;
-raildrone::SafetyManager safety_manager;
+raildrone::ApplicationCoordinator application;
+raildrone::MotorMixer motor_mixer;
 std::uint32_t last_heartbeat_ms = 0;
 
 }  // namespace
@@ -25,7 +24,7 @@ void setup() {
     Serial.println("==============================");
 
     // No sensor readings or actuator commands are fabricated here.
-    state_machine.begin_self_test();
+    application.state_machine().begin_self_test();
 }
 
 void loop() {
@@ -33,18 +32,15 @@ void loop() {
     state.timestamp_ms = millis();
     const raildrone::OperatorCommand reference{};
     const raildrone::ControlEffort effort{};
-    const raildrone::MotorCommands mixer_output{};
+    const auto mixer_output = motor_mixer.mix(0.0F, effort);
     const raildrone::SafetyRequirements requirements{};
-    const auto safe_output = safety_manager.enforce(
-        state, state_machine.mode(), requirements, reference, effort, mixer_output);
-    const auto telemetry = raildrone::make_telemetry(
-        state, state_machine.mode(), raildrone::ControlMode::MANUAL,
-        reference, safe_output.motor_commands, state_machine.fault());
+    const auto cycle = application.update(
+        state, requirements, reference, mixer_output, raildrone::ControlMode::NONE);
 
-    if (telemetry.timestamp_ms - last_heartbeat_ms >=
+    if (cycle.telemetry.timestamp_ms - last_heartbeat_ms >=
         raildrone::config::kHeartbeatIntervalMs) {
         Serial.println("RailDrone alive — hardware unavailable; outputs inhibited");
-        last_heartbeat_ms = telemetry.timestamp_ms;
+        last_heartbeat_ms = cycle.telemetry.timestamp_ms;
     }
     delay(10);
 }
